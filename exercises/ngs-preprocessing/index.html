@@ -806,6 +806,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#putting-it-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting it together
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1196,6 +1207,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#putting-it-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting it together
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1364,6 +1386,10 @@
 <p class="admonition-title">Tip: Copying the sequence</p>
 <p>Select the sequence in the FastQC report and copy it (Ctrl+C / Cmd+C). Check that you have copied only the sequence, with no spaces. Cutadapt accepts upper-case sequences only.</p>
 </div>
+<div class="admonition question">
+<p class="admonition-title">Questions: Predict before you trim</p>
+<p><strong>Q6b.</strong> Based on your FastQC report, which problem(s) should be addressed before any downstream analysis? For each problem, name the FastQC panel that shows it. What do you think the overrepresented sequence is, and in which part of the reads would you expect to find it?</p>
+</div>
 <h3 id="step-3-remove-adapters-using-cutadapt">Step 3 — Remove adapters using Cutadapt<a class="headerlink" href="#step-3-remove-adapters-using-cutadapt" title="Permanent link">&para;</a></h3>
 <p>Next we will remove the primer sequence from the reads using the program <strong>Cutadapt</strong>. We will search for it in two ways:</p>
 <ul>
@@ -1414,9 +1440,14 @@
 <p class="admonition-title">Questions</p>
 <p><strong>Q7.</strong> How many reads contained the adapter (<em>Reads with adapters</em>)? Compare this with the number of occurrences FastQC reported. If the numbers differ, suggest why. <em>(Hint: look at the length column in the table "Overview of removed sequences" — how long are most of the removed sequences?)</em></p>
 <p><strong>Q8.</strong> How many reads were removed because they were too short?</p>
+<p><strong>Q7b.</strong> Did the Cutadapt result support your prediction in Q6b? What do these numbers tell you about how much of the original dataset was affected by adapter/primer sequence?</p>
 </div>
 <h3 id="step-4-trim-low-quality-bases-with-trimmomatic">Step 4 — Trim low-quality bases with Trimmomatic<a class="headerlink" href="#step-4-trim-low-quality-bases-with-trimmomatic" title="Permanent link">&para;</a></h3>
 <p>Next we will remove low-quality bases from the ends of the reads using <strong>Trimmomatic</strong>. Trimmomatic applies its trimming operations <strong>in the order you list them</strong>, so add them in the order given below.</p>
+<div class="admonition question">
+<p class="admonition-title">Questions: Predict before you trim</p>
+<p><strong>Q8b.</strong> Look again at the <strong>Per base sequence quality</strong> plot of the raw reads (Q5). Which part of the reads do you expect quality trimming to affect most? What do you expect to happen to the read lengths, and could some reads disappear completely?</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Hands-on: Run Trimmomatic</p>
 <ol>
@@ -1457,6 +1488,7 @@
 <div class="admonition question">
 <p class="admonition-title">Questions</p>
 <p><strong>Q9.</strong> How many reads survived the trimming? How many were dropped?</p>
+<p><strong>Q9b.</strong> Which of the four operations is the one designed to remove whole reads? Using your answer to Q8b, explain why so many more reads were lost here than in the Cutadapt step.</p>
 </div>
 <h3 id="step-5-compare-fastqc-reports">Step 5 — Compare FastQC reports<a class="headerlink" href="#step-5-compare-fastqc-reports" title="Permanent link">&para;</a></h3>
 <p>After trimming, examine how the dataset has changed.</p>
@@ -1476,12 +1508,13 @@
 </div>
 <div class="admonition question">
 <p class="admonition-title">Questions</p>
-<p><strong>Q10.</strong> Compare the three FastQC reports (raw reads, adapter-trimmed reads, quality-trimmed reads).</p>
+<p><strong>Q10.</strong> Compare the three FastQC reports side by side: <strong>before</strong> (raw reads) and <strong>after</strong> each preprocessing step (adapter-trimmed and quality-trimmed reads). Look at the plots themselves, not only the summary icons.</p>
 <ol>
 <li>How did the <strong>Per base sequence quality</strong> plot change after adapter trimming, and after quality trimming?</li>
 <li>Is the overrepresented sequence still reported after adapter trimming?</li>
 <li>Did the <strong>Per base sequence content</strong> plot change after trimming?</li>
 <li>Which part of the reads still shows an unusual pattern in <strong>Per base sequence content</strong>? Suggest an additional trimming step, and which tool option could perform it.</li>
+<li><strong>Before vs after:</strong> did preprocessing solve the problems you identified in Q6b? For each step, say what improved, what did not materially change, and whether the step had its intended effect.</li>
 </ol>
 </div>
 <h2 id="human-illumina-paired-end-reads">Human Illumina paired-end reads<a class="headerlink" href="#human-illumina-paired-end-reads" title="Permanent link">&para;</a></h2>
@@ -1566,6 +1599,7 @@
 <li>Reverse only surviving</li>
 <li>Dropped</li>
 </ul>
+<p><strong>Q14b.</strong> Why can paired-end trimming produce these four categories? In this dataset, more <em>forward only</em> than <em>reverse only</em> reads survived. Which of your FastQC observations (Q12) explains that?</p>
 </div>
 <h4 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">&para;</a></h4>
 <p>Unlike the previous dataset, this dataset contains <strong>paired-end reads</strong>. Each DNA fragment was sequenced from both ends, producing a forward and a reverse read.</p>
@@ -1614,14 +1648,25 @@
 <li>read length (range)</li>
 <li>GC percentage</li>
 </ul>
-<p><strong>Q17.</strong> What differences can you observe between the <strong>quality profiles</strong> and the <strong>read-length distributions</strong> of the two sequencing technologies?</p>
-<p><strong>Q18.</strong> Compare all three technologies you have seen today (Illumina, 454, Ion Torrent). Which produce reads of a fixed length? Summarise, in one sentence each, the characteristic read length and quality profile of each technology.</p>
+<p><strong>Q17.</strong> Open the <strong>Per base sequence quality</strong>, <strong>Per sequence quality scores</strong> and <strong>Sequence Length Distribution</strong> plots of both reports side by side. What differences do you observe in read length, in quality, and in how quality deteriorates along the reads?</p>
+<p><strong>Q18.</strong> Compare all three technologies you have seen today (Illumina, 454, Ion Torrent). Which produce reads of a fixed length? Summarise, in one sentence each, the characteristic read length and quality profile of each technology. Based on the plots, which dataset would you expect to lose the most reads if trimmed with the same settings as the Illumina data (average quality 20), and why? <em>(You can test your prediction in the optional exploration, Q19.)</em></p>
 </div>
 <h3 id="optional-exploration">Optional exploration<a class="headerlink" href="#optional-exploration" title="Permanent link">&para;</a></h3>
 <p>Try trimming the 454 and Ion Torrent reads to remove low-quality bases with <strong>Trimmomatic</strong> (<a href="https://usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.39%2Bgalaxy2&amp;version=0.39%2Bgalaxy2">open tool</a>) (<em>"Single-end"</em>, the same four operations as before), and then run <strong>FastQC</strong> again to evaluate the effect of trimming.</p>
 <div class="admonition question">
 <p class="admonition-title">Questions</p>
 <p><strong>Q19.</strong> <em>(Optional)</em> How many reads survive trimming for each technology? Explain what you observe.</p>
+</div>
+<h3 id="putting-it-together">Putting it together<a class="headerlink" href="#putting-it-together" title="Permanent link">&para;</a></h3>
+<p>Quality control is a loop: <strong>observe → predict → process → observe again → compare → explain</strong>.</p>
+<div class="admonition question">
+<p class="admonition-title">Questions</p>
+<p><strong>Q20.</strong> You receive a new sequencing dataset tomorrow. Before any downstream analysis:</p>
+<ol>
+<li>What would you inspect first, and in which FastQC panels?</li>
+<li>How would you decide whether trimming is necessary, and which kind?</li>
+<li>What would you check after preprocessing?</li>
+</ol>
 </div>
 <h2 id="exercise-completed">Exercise completed<a class="headerlink" href="#exercise-completed" title="Permanent link">&para;</a></h2>
 <p><strong>Congratulations — you have now completed the data preprocessing exercises.</strong></p>
