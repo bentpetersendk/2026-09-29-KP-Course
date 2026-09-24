@@ -101,9 +101,7 @@ This process may be repeated several times until the read quality is acceptable 
 
     A red dataset means the job failed. See *If a job fails* on the course's Galaxy page. Temporary server problems are fixed by clicking **Run Job Again** and then **Run Tool**.
 
-> <tip-title>Reading about the tool</tip-title>
-
-!!! tip "Tip"
+!!! tip "Tip: Reading about the tool"
 
     While the job is running, scroll down in the FastQC tool form to read the tool's help text.
 
