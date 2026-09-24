@@ -28,8 +28,9 @@ For an exercise you will usually **import a shared history** that already contai
 1. Log in first.
 2. Open the link given on the [Data](../data/index.md) page.
 3. Click **Import this history**. In the **Copying History** dialog, give the copy a name and click **Copy History**.
+4. A blue message confirms *"History imported and is now your active history"*, but the page still shows the shared history. Click the **Galaxy** logo at the top left (*Home*) to return to the main page: your copy is now shown in the history panel on the right.
 
-The copy is yours, and you can run tools in it.
+The copy is yours, and you can run tools in it. You cannot run tools in the shared history itself.
 
 ## Datatypes and collections
 
