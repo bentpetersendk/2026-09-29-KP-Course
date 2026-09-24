@@ -66,7 +66,7 @@ All the data for today's exercise are collected in one Galaxy history. You will 
 
     1. Click **Upload** in the left-hand activity bar.
     2. Click **Choose local file** and select the files.
-    3. Set **Type** to `fastqsanger.gz` for every file.
+    3. Set **Type (set all)** to `fastqsanger.gz`.
     4. Click **Start** and wait until all datasets turn green.
     5. Build the `HG00418` paired collection as described in the paired-end part of this exercise.
 
@@ -95,6 +95,10 @@ This process may be repeated several times until the read quality is acceptable 
     2. Click **Run Tool**.
     3. FastQC produces two datasets: a **Webpage** (the report) and **RawData** (the same results as text).
     4. When the job has finished (green), click the eye icon on the **Webpage** dataset to view the report.
+
+!!! tip "Tip: If a job turns red"
+
+    A red dataset means the job failed. See *If a job fails* on the course's Galaxy page. Temporary server problems are fixed by clicking **Run Job Again** and then **Run Tool**.
 
 !!! tip "Tip: Reading about the tool"
 
@@ -258,11 +262,14 @@ Each DNA fragment was sequenced from both ends. The file **HG00418_A_1.fastq.gz*
 
 !!! tip "Tip: If you uploaded the files yourself: build the paired collection"
 
-    1. At the top of the history, click the **Select items** (checkbox) icon.
+    1. At the top of the history, click the **Select Items** (checkbox) icon.
     2. Tick `HG00418_A_1.fastq.gz` and `HG00418_A_2.fastq.gz`.
-    3. Open the **selection dropdown** ("2 of … selected") and choose **Build Dataset Pair**.
-    4. Check that `HG00418_A_1.fastq.gz` is the **forward** read and `HG00418_A_2.fastq.gz` is the **reverse** read (swap them if not).
-    5. Name the collection `HG00418` and click **Build**.
+    3. Open the selection dropdown ("2 of … selected") and choose **Advanced Build List**.
+    4. Under *What are you building?* choose **List of Paired Datasets** and continue.
+    5. Check that the two files are paired with `HG00418_A_1.fastq.gz` as the **forward** read and `HG00418_A_2.fastq.gz` as the **reverse** read.
+    6. Name the collection `HG00418` and click **Build**.
+
+    This creates a list containing one pair. You can use it everywhere this exercise says `HG00418`; Galaxy then runs each tool on the pair inside the list.
 
 ### Step 2 — Run FastQC
 

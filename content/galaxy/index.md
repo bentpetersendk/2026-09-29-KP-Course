@@ -39,10 +39,18 @@ Paired-end reads come as two files (forward and reverse). Galaxy keeps them toge
 
 Tool links in the exercises open the exact tool version used in the course.
 
+## If a job fails (red dataset)
+
+Click the red dataset to expand it and read the error message.
+
+- If the message mentions the **server** (for example *container creation failed*), it is a temporary problem on Galaxy Europe. Click the **Run Job Again** button (circular arrow) in the expanded dataset, and then **Run Tool** without changing anything.
+- If the message is about your **input or settings**, check the tool form against the exercise instructions, correct it, and run the tool again.
+- If it still fails, ask a teacher (see below).
+
 ## Getting help from a teacher
 
 If something does not work, you can let a teacher look at your history:
-open **History options** (the menu at the top of the history panel), choose **Share & manage access**, and share the history with your teacher's Galaxy e-mail address. Your teacher can then view the history (and copy it), but cannot change it.
+open **History options** (the menu at the top of the history panel), choose **Share & Manage Access**, and share the history with your teacher's Galaxy e-mail address. Your teacher can then view the history (and copy it), but cannot change it.
 
 ## Storage
 
