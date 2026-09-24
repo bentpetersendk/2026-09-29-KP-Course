@@ -1289,14 +1289,14 @@
 <ol>
 <li>Log in to <a href="https://usegalaxy.eu">Galaxy Europe</a> (create a free account first if you do not have one). Log in <strong>before</strong> you open the data link: otherwise your copy is not saved in your account.</li>
 <li>Open the shared data history: <a href="https://usegalaxy.eu/u/bentpetersen/h/kp-preprocessing-data">shared data history</a></li>
-<li>Click <strong>Import this history</strong> (top right of the history).</li>
+<li>Click <strong>Import this history</strong> (top right, above the history).</li>
 <li>In the <strong>Copying History</strong> dialog:<ul>
-<li><em>"Enter a title for the new history"</em>: <code>Preprocessing</code></li>
+<li><em>"Enter a title for the new history"</em>: replace the suggested title with <code>Preprocessing</code></li>
 <li>keep <strong>Copy only the active, non-deleted datasets.</strong> selected</li>
 <li>click <strong>Copy History</strong>.</li>
 </ul>
 </li>
-<li>Your copy normally becomes your current history, shown in the history panel on the right. If the panel shows another history, open <strong>Histories</strong> in the left-hand activity bar and switch to <code>Preprocessing</code>.</li>
+<li>A blue message confirms <em>"History imported and is now your active history"</em>, but the page still shows the shared history. Click the <strong>Galaxy</strong> logo at the top left (<em>Home</em>) to return to the main page. Your copy <code>Preprocessing</code> is now shown in the history panel on the right. If the panel shows another history, open <strong>Histories</strong> in the left-hand activity bar and switch to <code>Preprocessing</code>.</li>
 <li>Check that the history contains the five files <code>Paeruginosa.fastq.gz</code>, <code>HG00418_A_1.fastq.gz</code>, <code>HG00418_A_2.fastq.gz</code>, <code>GOS1.fastq.gz</code> and <code>iontorrent.fastq.gz</code>, and the paired collection <code>HG00418</code> ("a pair with 2 fastqsanger.gz datasets"). The history also shows 2 hidden datasets: these are the collection's two files and can be ignored.</li>
 <li>Click on <code>Paeruginosa.fastq.gz</code> to expand it. Check that its datatype is <code>fastqsanger.gz</code>. A preview of the first reads is shown below the dataset details.</li>
 </ol>
@@ -1330,8 +1330,9 @@
 <p class="admonition-title">Hands-on: Run FastQC on the raw reads</p>
 <ol>
 <li>Run <strong>FastQC</strong> (<a href="https://usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.74%2Bgalaxy1&amp;version=0.74%2Bgalaxy1">open tool</a>) with the following parameters:<ul>
-<li><em>"Raw read data from your current history"</em>: <code>Paeruginosa.fastq.gz</code></li>
+<li><em>"Raw read data from your current history"</em>: <code>Paeruginosa.fastq.gz</code> (Galaxy pre-selects the newest dataset, so change it)</li>
 <li>Leave all other parameters at their defaults.</li>
+<li>Galaxy Europe shows a banner recommending the tool <em>Falco</em> instead. Ignore it: this exercise uses FastQC.</li>
 </ul>
 </li>
 <li>Click <strong>Run Tool</strong>.</li>
@@ -1405,14 +1406,14 @@
 <li>In <em>"Read 1 Adapters"</em>:<ul>
 <li><em>"Insert 3' (End) Adapters"</em><ul>
 <li><em>"Source"</em>: <code>Enter custom sequence</code><ul>
-<li><em>"Custom 3' adapter sequence"</em>: the sequence you recorded from FastQC</li>
+<li><em>"Custom 3' adapter sequence"</em>: the sequence you recorded from FastQC. The box already contains an example value (<code>AATTGGCC</code>): delete it first, so that the box contains only your sequence.</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><em>"Insert 5' (Front) Adapters"</em><ul>
 <li><em>"Source"</em>: <code>Enter custom sequence</code><ul>
-<li><em>"Custom 5' adapter sequence"</em>: <code>^</code> followed immediately by the same sequence (this makes the 5′ adapter anchored)</li>
+<li><em>"Custom 5' adapter sequence"</em>: <code>^</code> followed immediately by the same sequence (this makes the 5′ adapter anchored). Again, delete the example value first.</li>
 </ul>
 </li>
 </ul>
@@ -1422,7 +1423,7 @@
 </ul>
 </li>
 <li>In <em>"Adapter Handling Options"</em>: keep the defaults (<em>"Maximum error rate"</em>: <code>0.1</code>, <em>"Minimum overlap length"</em>: <code>3</code>).</li>
-<li>In <em>"Read Filtering Options"</em>:<ul>
+<li>In <em>"Read Filtering Options"</em> (click the section title to expand it):<ul>
 <li><em>"Minimum length (R1)"</em>: <code>50</code></li>
 </ul>
 </li>
@@ -1496,15 +1497,16 @@
 <p class="admonition-title">Hands-on: Run FastQC on the trimmed data</p>
 <ol>
 <li>Run <strong>FastQC</strong> (<a href="https://usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.74%2Bgalaxy1&amp;version=0.74%2Bgalaxy1">open tool</a>):<ul>
-<li><em>"Raw read data from your current history"</em>: select <strong>both</strong> <code>Paeruginosa.cut</code> and <code>Paeruginosa.cut.trim</code> (click the <em>Multiple datasets</em> button and hold Ctrl/Cmd to select more than one). Galaxy runs FastQC once for each dataset.</li>
+<li><em>"Raw read data from your current history"</em>: select <strong>both</strong> <code>Paeruginosa.cut</code> and <code>Paeruginosa.cut.trim</code>. Click the <em>Multiple datasets</em> button, then click the datasets in the list. Galaxy may already have selected one dataset for you, and clicking a selected dataset removes it again: check that the box shows exactly these two datasets (remove any other with its <strong>×</strong>). Galaxy runs FastQC once for each dataset.</li>
 </ul>
 </li>
-<li>Open the three FastQC <strong>Webpage</strong> reports (raw, <code>Paeruginosa.cut</code> and <code>Paeruginosa.cut.trim</code>).</li>
+<li>Open the three FastQC <strong>Webpage</strong> reports (raw, <code>Paeruginosa.cut</code> and <code>Paeruginosa.cut.trim</code>). Galaxy names each report after the number of its input in your history: for example, <em>FastQC on dataset 1: Webpage</em> is the report for dataset 1, <code>Paeruginosa.fastq.gz</code>.</li>
 </ol>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip: Viewing reports side by side</p>
-<p>Enable the <strong>Window Manager</strong> (in the left-hand activity bar). Each report you open with the eye icon then appears in its own window, so you can arrange the three reports next to each other. Alternatively, open each report in a separate browser tab.</p>
+<p>Click the grid icon in the top bar (<em>Enable/Disable Window Manager</em>). Each report you open with the eye icon then appears in its own window, which you can move and resize to arrange the three reports next to each other. When you have finished, close the windows (<strong>×</strong>) and click the grid icon again to switch the Window Manager off; otherwise the windows cover the tool forms.
+Alternatively, open each report in its own browser tab: Ctrl-click (Cmd-click on a Mac) the eye icon.</p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Questions</p>
@@ -1525,8 +1527,8 @@
 <div class="admonition example">
 <p class="admonition-title">Hands-on: Check the paired collection</p>
 <ol>
-<li>In your history, click the <code>HG00418</code> collection. It contains two datasets, <strong>forward</strong> (<code>HG00418_A_1.fastq.gz</code>) and <strong>reverse</strong> (<code>HG00418_A_2.fastq.gz</code>).</li>
-<li>Use the back arrow at the top of the history panel to return to the full history.</li>
+<li>In your history, click the <code>HG00418</code> collection. It contains two datasets, shown as <strong>forward</strong> (the reads from <code>HG00418_A_1.fastq.gz</code>) and <strong>reverse</strong> (the reads from <code>HG00418_A_2.fastq.gz</code>).</li>
+<li>Click <strong>« History: Preprocessing</strong> at the top of the history panel to return to the full history.</li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1535,8 +1537,8 @@
 <li>At the top of the history, click the <strong>Select Items</strong> (checkbox) icon.</li>
 <li>Tick <code>HG00418_A_1.fastq.gz</code> and <code>HG00418_A_2.fastq.gz</code>.</li>
 <li>Open the selection dropdown ("2 of … selected") and choose <strong>Advanced Build List</strong>.</li>
-<li>Under <em>What are you building?</em> choose <strong>List of Paired Datasets</strong> and continue.</li>
-<li>Check that the two files are paired with <code>HG00418_A_1.fastq.gz</code> as the <strong>forward</strong> read and <code>HG00418_A_2.fastq.gz</code> as the <strong>reverse</strong> read.</li>
+<li>Under <em>What are you building?</em> choose <strong>List of Paired Datasets</strong> and click <strong>Next</strong>.</li>
+<li>Under <em>Auto Pairing</em>, check that the two files are paired with <code>HG00418_A_1.fastq.gz</code> as the <strong>forward</strong> read and <code>HG00418_A_2.fastq.gz</code> as the <strong>reverse</strong> read, and click <strong>Next</strong>.</li>
 <li>Name the collection <code>HG00418</code> and click <strong>Build</strong>.</li>
 </ol>
 <p>This creates a list containing one pair. You can use it everywhere this exercise says <code>HG00418</code>; Galaxy then runs each tool on the pair inside the list.</p>
@@ -1633,7 +1635,7 @@
 <p class="admonition-title">Hands-on: Run FastQC on both datasets</p>
 <ol>
 <li>Run <strong>FastQC</strong> (<a href="https://usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.74%2Bgalaxy1&amp;version=0.74%2Bgalaxy1">open tool</a>):<ul>
-<li><em>"Raw read data from your current history"</em>: select both <code>GOS1.fastq.gz</code> and <code>iontorrent.fastq.gz</code> (<em>Multiple datasets</em>).</li>
+<li><em>"Raw read data from your current history"</em>: select both <code>GOS1.fastq.gz</code> and <code>iontorrent.fastq.gz</code> (<em>Multiple datasets</em>). As before, check that the box shows exactly these two datasets.</li>
 </ul>
 </li>
 <li>Open both <strong>Webpage</strong> reports.</li>
