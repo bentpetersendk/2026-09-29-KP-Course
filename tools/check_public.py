@@ -29,6 +29,9 @@ PRIVATE_NAMES = {"validation.yaml", "migration-notes.md", "runbook.md", "tutoria
 PRIVATE_SUFFIXES = (".gxwf.yml", ".ga", ".fastq", ".fastq.gz", ".fq", ".fq.gz", ".key", ".env", ".pem")
 MARKERS = [
     (re.compile(r"\{:\s*\.solution"), "GTN solution box"),
+    (re.compile(r"\{:\s*\.(teacher_note|common_problem|live_demo|expected|answer)\b"), "GTN teacher-only box"),
+    (re.compile(r"!!! (answer|expected|teacher-note|common-problem|live-demo)\b"), "teacher-only admonition"),
+    (re.compile(r"(?i)teacher edition|contains solutions"), "teacher-edition marker"),
     (re.compile(r"<solution-title>"), "GTN solution title"),
     (re.compile(r"<!--\s*validation:"), "validation marker"),
     (re.compile(r"(?i)teacher validation|teacher version|teacher appendix"), "teacher-only heading"),

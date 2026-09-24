@@ -2,11 +2,11 @@
 title: Home
 ---
 
-# 2026 - KP Course Materials
+# 2026-09-29 KP Course
 
 <!-- TODO(instructors): add the course code, semester and a short course description. -->
 
-This site is the starting point for the course. It collects the lectures, hands-on exercises and datasets, and more material will be added during the year.
+This site is the starting point for the KP course on 29 September 2026. It collects the lectures, the hands-on exercise and the data.
 The exercises run in your web browser on [Galaxy Europe](https://usegalaxy.eu), so you do not need to install any software.
 
 <div class="grid cards" markdown>
