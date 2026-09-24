@@ -155,6 +155,10 @@ In this dataset you should find an overrepresented sequence that FastQC identifi
 
     Select the sequence in the FastQC report and copy it (Ctrl+C / Cmd+C). Check that you have copied only the sequence, with no spaces. Cutadapt accepts upper-case sequences only.
 
+!!! question "Questions: Predict before you trim"
+
+    **Q6b.** Based on your FastQC report, which problem(s) should be addressed before any downstream analysis? For each problem, name the FastQC panel that shows it. What do you think the overrepresented sequence is, and in which part of the reads would you expect to find it?
+
 ### Step 3 — Remove adapters using Cutadapt
 
 Next we will remove the primer sequence from the reads using the program **Cutadapt**. We will search for it in two ways:
@@ -193,9 +197,15 @@ When the job has finished, click the eye icon on the **Report** dataset. The sta
 
     **Q8.** How many reads were removed because they were too short?
 
+    **Q7b.** Did the Cutadapt result support your prediction in Q6b? What do these numbers tell you about how much of the original dataset was affected by adapter/primer sequence?
+
 ### Step 4 — Trim low-quality bases with Trimmomatic
 
 Next we will remove low-quality bases from the ends of the reads using **Trimmomatic**. Trimmomatic applies its trimming operations **in the order you list them**, so add them in the order given below.
+
+!!! question "Questions: Predict before you trim"
+
+    **Q8b.** Look again at the **Per base sequence quality** plot of the raw reads (Q5). Which part of the reads do you expect quality trimming to affect most? What do you expect to happen to the read lengths, and could some reads disappear completely?
 
 !!! example "Hands-on: Run Trimmomatic"
 
@@ -223,6 +233,8 @@ The trimming statistics are in the **log file** output. Click its eye icon and f
 
     **Q9.** How many reads survived the trimming? How many were dropped?
 
+    **Q9b.** Which of the four operations is the one designed to remove whole reads? Using your answer to Q8b, explain why so many more reads were lost here than in the Cutadapt step.
+
 ### Step 5 — Compare FastQC reports
 
 After trimming, examine how the dataset has changed.
@@ -239,12 +251,13 @@ After trimming, examine how the dataset has changed.
 
 !!! question "Questions"
 
-    **Q10.** Compare the three FastQC reports (raw reads, adapter-trimmed reads, quality-trimmed reads).
+    **Q10.** Compare the three FastQC reports side by side: **before** (raw reads) and **after** each preprocessing step (adapter-trimmed and quality-trimmed reads). Look at the plots themselves, not only the summary icons.
 
     1. How did the **Per base sequence quality** plot change after adapter trimming, and after quality trimming?
     2. Is the overrepresented sequence still reported after adapter trimming?
     3. Did the **Per base sequence content** plot change after trimming?
     4. Which part of the reads still shows an unusual pattern in **Per base sequence content**? Suggest an additional trimming step, and which tool option could perform it.
+    5. **Before vs after:** did preprocessing solve the problems you identified in Q6b? For each step, say what improved, what did not materially change, and whether the step had its intended effect.
 
 ## Human Illumina paired-end reads
 
@@ -323,6 +336,8 @@ Open the **log file** and find the line starting with `Input Read Pairs:`.
     - Reverse only surviving
     - Dropped
 
+    **Q14b.** Why can paired-end trimming produce these four categories? In this dataset, more *forward only* than *reverse only* reads survived. Which of your FastQC observations (Q12) explains that?
+
 #### Interpretation
 
 Unlike the previous dataset, this dataset contains **paired-end reads**. Each DNA fragment was sequenced from both ends, producing a forward and a reverse read.
@@ -375,9 +390,9 @@ Pay particular attention to *Basic Statistics*, the **Per base sequence quality*
     - read length (range)
     - GC percentage
 
-    **Q17.** What differences can you observe between the **quality profiles** and the **read-length distributions** of the two sequencing technologies?
+    **Q17.** Open the **Per base sequence quality**, **Per sequence quality scores** and **Sequence Length Distribution** plots of both reports side by side. What differences do you observe in read length, in quality, and in how quality deteriorates along the reads?
 
-    **Q18.** Compare all three technologies you have seen today (Illumina, 454, Ion Torrent). Which produce reads of a fixed length? Summarise, in one sentence each, the characteristic read length and quality profile of each technology.
+    **Q18.** Compare all three technologies you have seen today (Illumina, 454, Ion Torrent). Which produce reads of a fixed length? Summarise, in one sentence each, the characteristic read length and quality profile of each technology. Based on the plots, which dataset would you expect to lose the most reads if trimmed with the same settings as the Illumina data (average quality 20), and why? *(You can test your prediction in the optional exploration, Q19.)*
 
 ### Optional exploration
 
@@ -386,6 +401,18 @@ Try trimming the 454 and Ion Torrent reads to remove low-quality bases with **Tr
 !!! question "Questions"
 
     **Q19.** *(Optional)* How many reads survive trimming for each technology? Explain what you observe.
+
+### Putting it together
+
+Quality control is a loop: **observe → predict → process → observe again → compare → explain**.
+
+!!! question "Questions"
+
+    **Q20.** You receive a new sequencing dataset tomorrow. Before any downstream analysis:
+
+    1. What would you inspect first, and in which FastQC panels?
+    2. How would you decide whether trimming is necessary, and which kind?
+    3. What would you check after preprocessing?
 
 ## Exercise completed
 
