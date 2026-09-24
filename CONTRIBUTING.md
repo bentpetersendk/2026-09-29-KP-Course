@@ -75,3 +75,9 @@ Tag the repository at the start of each course run (for example `git tag 2026-au
 - Write for students: short paragraphs, the exact Galaxy button and field names, one action per step.
 - Link to tool versions with the "open tool" links that the exercise build generates, so students always use the tested versions.
 - Do not add answers anywhere in this repository.
+
+## Licensing of contributions
+
+Original material added to this repository is published under CC BY 4.0 (see `LICENSE.md`).
+- Only add third-party material (figures, slides, data) if its licence allows it, and state its source and licence next to it.
+- Never add FASTQ or other datasets to Git.

@@ -2,11 +2,11 @@
 title: Home
 ---
 
-# KP course material
+# 2026 - KP Course Materials
 
-<!-- TODO(instructors): add the official course name, course code, semester and a short course description. -->
+<!-- TODO(instructors): add the course code, semester and a short course description. -->
 
-This site collects the lectures, hands-on exercises and datasets for the course.
+This site is the starting point for the course. It collects the lectures, hands-on exercises and datasets, and more material will be added during the year.
 The exercises run in your web browser on [Galaxy Europe](https://usegalaxy.eu), so you do not need to install any software.
 
 <div class="grid cards" markdown>

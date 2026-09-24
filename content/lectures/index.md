@@ -12,4 +12,4 @@ Large files (> 20 MB) belong in a release/archive, not in Git - see CONTRIBUTING
 
 | # | Lecture | Material | Related exercise |
 |---|---|---|---|
-| 1 | Pre-processing of NGS data | Slides will be added here. | [Data preprocessing of NGS reads](../exercises/ngs-preprocessing/index.md) |
+| 1 | Pre-processing of NGS data | Slides will be added here. | [NGS preprocessing and quality control](../exercises/ngs-preprocessing/index.md) |

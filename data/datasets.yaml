@@ -10,7 +10,7 @@
 datasets:
 
 - id: ngs-preprocessing
-  title: Data preprocessing of NGS reads
+  title: NGS preprocessing and quality control
   exercise: exercises/ngs-preprocessing/index.md
   # Shared Galaxy Europe history containing exactly these files (and the HG00418
   # paired collection). Empty until the instructors share it.

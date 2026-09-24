@@ -1,6 +1,8 @@
-# KP course material
+# 2026 - KP Course Materials
 
-Public course website: lectures, hands-on exercises, datasets and Galaxy help for students.
+Student edition: the public course website with lectures, hands-on exercises, data and Galaxy instructions.
+
+**Course website:** <https://bentpetersendk.github.io/2026-KP-Course-Materials/>
 
 - **Website:** built with [MkDocs](https://www.mkdocs.org/) and the Material theme, published on GitHub Pages.
 - **Maintainers:** Bent Petersen <!-- and co-teachers: add names -->
