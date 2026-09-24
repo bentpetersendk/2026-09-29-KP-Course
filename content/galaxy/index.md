@@ -23,7 +23,13 @@ Every dataset in the history has a colour showing its state: **grey** means wait
 
 A history holds one analysis. Start a new history for each exercise (the **+** icon at the top of the history panel), and give it a clear name.
 
-For an exercise you will usually **import a shared history** that already contains the input data. Open the link given on the [Data](../data/index.md) page and click **Import this history**. The imported copy is yours, and you can run tools in it.
+For an exercise you will usually **import a shared history** that already contains the input data:
+
+1. Log in first.
+2. Open the link given on the [Data](../data/index.md) page.
+3. Click **Import this history**. In the **Copying History** dialog, give the copy a name and click **Copy History**.
+
+The copy is yours, and you can run tools in it.
 
 ## Datatypes and collections
 

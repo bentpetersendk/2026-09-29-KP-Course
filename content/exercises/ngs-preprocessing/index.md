@@ -50,17 +50,18 @@ All the data for today's exercise are collected in one Galaxy history. You will 
 
 !!! example "Hands-on: Import the data"
 
-    1. Log in to [Galaxy Europe](https://usegalaxy.eu).
-    2. Open the shared data history: *(the link is posted on the [Data page](../../data/index.md#ngs-preprocessing))*
-    3. Click **Import this history** and give it a name, for example `Preprocessing`. The imported history becomes your current history.
-    4. Check that the history contains these datasets:
-        - `Paeruginosa.fastq.gz`
-        - `HG00418` (a paired collection containing `HG00418_A_1.fastq.gz` and `HG00418_A_2.fastq.gz`)
-        - `GOS1.fastq.gz`
-        - `iontorrent.fastq.gz`
-    5. Click on `Paeruginosa.fastq.gz` to expand it. Check that its datatype is `fastqsanger.gz`. A preview of the first reads is shown below the dataset details.
+    1. Log in to [Galaxy Europe](https://usegalaxy.eu) (create a free account first if you do not have one). Log in **before** you open the data link: otherwise your copy is not saved in your account.
+    2. Open the shared data history: [shared data history](https://usegalaxy.eu/u/bentpetersen/h/kp-preprocessing-data)
+    3. Click **Import this history** (top right of the history).
+    4. In the **Copying History** dialog:
+        - *"Enter a title for the new history"*: `Preprocessing`
+        - keep **Copy only the active, non-deleted datasets.** selected
+        - click **Copy History**.
+    5. Your copy normally becomes your current history, shown in the history panel on the right. If the panel shows another history, open **Histories** in the left-hand activity bar and switch to `Preprocessing`.
+    6. Check that the history contains the five files `Paeruginosa.fastq.gz`, `HG00418_A_1.fastq.gz`, `HG00418_A_2.fastq.gz`, `GOS1.fastq.gz` and `iontorrent.fastq.gz`, and the paired collection `HG00418` ("a pair with 2 fastqsanger.gz datasets"). The history also shows 2 hidden datasets: these are the collection's two files and can be ignored.
+    7. Click on `Paeruginosa.fastq.gz` to expand it. Check that its datatype is `fastqsanger.gz`. A preview of the first reads is shown below the dataset details.
 
-!!! tip "Tip: Uploading the files yourself instead"
+!!! tip "Tip: Only if the shared history does not work: upload the files yourself"
 
     If you cannot use the shared history, download the five files listed on the [Data page](../../data/index.md#ngs-preprocessing) to your computer and upload them to a new Galaxy history:
 

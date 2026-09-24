@@ -14,7 +14,7 @@ datasets:
   exercise: exercises/ngs-preprocessing/index.md
   # Shared Galaxy Europe history containing exactly these files (and the HG00418
   # paired collection). Empty until the instructors share it.
-  galaxy_history_url: ""
+  galaxy_history_url: "https://usegalaxy.eu/u/bentpetersen/h/kp-preprocessing-data"
   # Long-term archive (e.g. a Zenodo DOI). Empty until redistribution rights are confirmed.
   archive_url: ""
   redistribution: >-
