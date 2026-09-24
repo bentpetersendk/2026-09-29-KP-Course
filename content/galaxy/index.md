@@ -1,0 +1,55 @@
+---
+title: Galaxy
+---
+
+# Getting started with Galaxy Europe
+
+[Galaxy](https://usegalaxy.eu) is a web platform for analysing biological data. You run analysis tools from your browser, and the computations run on the Galaxy Europe servers.
+
+## Create an account
+
+1. Go to <https://usegalaxy.eu/login/start> and register with your university e-mail address.
+2. Confirm your e-mail address and log in.
+
+## The Galaxy interface
+
+- **Left:** the activity bar, with **Upload**, **Tools**, **Workflows** and more. Search for a tool by name in the tool panel.
+- **Centre:** the tool form or the result you are viewing.
+- **Right:** your current **history**, which is the list of all datasets you have uploaded or created.
+
+Every dataset in the history has a colour showing its state: **grey** means waiting, **orange** means running, **green** means finished, and **red** means failed. Click a dataset's name to expand it. Click the **eye** icon to view its contents.
+
+## Histories
+
+A history holds one analysis. Start a new history for each exercise (the **+** icon at the top of the history panel), and give it a clear name.
+
+For an exercise you will usually **import a shared history** that already contains the input data. Open the link given on the [Data](../data/index.md) page and click **Import this history**. The imported copy is yours, and you can run tools in it.
+
+## Datatypes and collections
+
+Galaxy uses the **datatype** of a dataset to decide which tools can read it. Compressed FASTQ files with standard quality scores have the datatype `fastqsanger.gz`. If a tool does not offer your dataset as input, check the datatype. You can change it with the **pencil** icon, under **Datatypes**.
+
+Paired-end reads come as two files (forward and reverse). Galaxy keeps them together as a **paired collection**, so that tools always receive both files in the right order.
+
+## Running a tool
+
+1. Search for the tool, open it, and fill in the form as described in the exercise.
+2. Click **Run Tool**. The new outputs appear at the top of your history.
+3. When the outputs are green, click the eye icon to inspect them.
+
+Tool links in the exercises open the exact tool version used in the course.
+
+## Getting help from a teacher
+
+If something does not work, you can let a teacher look at your history:
+open **History options** (the menu at the top of the history panel), choose **Share & manage access**, and share the history with your teacher's Galaxy e-mail address. Your teacher can then view the history (and copy it), but cannot change it.
+
+## Storage
+
+Your Galaxy account has a storage quota. Delete histories you no longer need, and choose to delete them **permanently** to free space.
+
+## Learn more
+
+- [A short introduction to Galaxy](https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-short/tutorial.html) (Galaxy Training Network)
+- [Galaxy Training Network](https://training.galaxyproject.org/): many more tutorials
+- [Galaxy Help forum](https://help.galaxyproject.org/)
