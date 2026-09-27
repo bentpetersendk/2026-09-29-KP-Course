@@ -36,13 +36,11 @@ theme:
     - search.highlight
     - content.code.copy
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: blue grey
       accent: indigo
       toggle: {icon: material/weather-night, name: Switch to dark mode}
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: blue grey
       accent: indigo
       toggle: {icon: material/weather-sunny, name: Switch to light mode}
