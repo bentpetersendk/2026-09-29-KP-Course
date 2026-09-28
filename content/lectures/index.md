@@ -8,17 +8,17 @@ The slides open in Gamma in your browser.
 
 <div class="grid cards" markdown>
 
--   **00 — Introduction to Galaxy**
-
-    A short orientation to Galaxy Europe before the hands-on exercise: histories, datasets and collections, running a tool, and why you inspect before you trim.
-
-    [Open the slides (Gamma)](https://gamma.app/docs/iaervcmcjfk2y2n){ .md-button }
-
 -   **01 — Pre-processing of NGS Data**
 
     Sequencing technologies, read quality, quality control with FastQC, and adapter and quality trimming.
 
     [Open the slides (Gamma)](https://gamma.app/docs/2026-03-09-KP-01-Pre-processing-of-NGS-Data-3ph5yyvsti8c5qf){ .md-button }
+
+-   **00 — Introduction to Galaxy**
+
+    A short orientation to Galaxy Europe before the hands-on exercise: histories, datasets and collections, running a tool, and why you inspect before you trim.
+
+    [Open the slides (Gamma)](https://gamma.app/docs/iaervcmcjfk2y2n){ .md-button }
 
 -   **Hands-on exercise**
 
