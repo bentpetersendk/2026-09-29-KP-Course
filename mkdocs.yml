@@ -51,6 +51,9 @@ extra:
 extra_css:
   - assets/extra.css
 
+extra_javascript:
+  - assets/external-links.js
+
 hooks:
   - hooks/datasets_table.py
 
